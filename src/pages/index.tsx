@@ -1,114 +1,176 @@
-import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
+import { GetStaticProps, NextPage } from "next";
+import fs from "fs";
+import path from "path";
+import Card from "../components/Card";
+import React from "react";
+import Header from "@/components/Header";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export default function Home() {
-  return (
-    <div
-      className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
-    >
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/pages/index.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+interface SectionContent {
+  title?: string;
+  content: string;
 }
+
+interface ContentSections {
+  header: SectionContent;
+  about: SectionContent;
+  projects: SectionContent;
+}
+
+interface HomeProps {
+  content: ContentSections;
+}
+
+export const getStaticProps: GetStaticProps<HomeProps> = async ({ locale }) => {
+  const defaultLocale = "en"; // Set default locale
+
+  // If no locale is provided, default to 'en'
+  const contentLocale = locale || defaultLocale;
+  const filePath = path.join(
+    process.cwd(),
+    "public",
+    contentLocale,
+    "content.txt"
+  );
+
+  let fileContent = "";
+  try {
+    fileContent = fs.readFileSync(filePath, "utf8");
+  } catch {
+    console.error(
+      `Content file for locale '${contentLocale}' not found. Falling back to default locale '${defaultLocale}'.`
+    );
+    const defaultFilePath = path.join(
+      process.cwd(),
+      "public",
+      defaultLocale,
+      "content.txt"
+    );
+    fileContent = fs.readFileSync(defaultFilePath, "utf8");
+  }
+
+  const content: ContentSections = {
+    header: { content: "" },
+    about: { content: "" },
+    projects: { content: "" },
+  };
+
+  const sectionRegex = /<(\w+)>([\s\S]*?)<\/\1>/g;
+  let match;
+  while ((match = sectionRegex.exec(fileContent)) !== null) {
+    const tag = match[1].toLowerCase();
+    let text = match[2].trim();
+
+    if (tag in content) {
+      const titleMatch = text.match(/<title>([\s\S]*?)<\/title>/);
+      let sectionTitle = "";
+      if (titleMatch) {
+        sectionTitle = titleMatch[1].trim();
+        text = text.replace(/<title>[\s\S]*?<\/title>/, "").trim();
+      }
+      content[tag as keyof ContentSections] = {
+        title: sectionTitle,
+        content: text,
+      };
+    }
+  }
+
+  return {
+    props: { content },
+  };
+};
+
+const parseStyledContent = (content: string): React.ReactNode[] => {
+  const nodes: React.ReactNode[] = [];
+  let keyCounter = 0;
+  const styleRegex = /<style\s+([^>]+)>([\s\S]*?)<\/style>/g;
+  let lastIndex = 0;
+  let match;
+
+  while ((match = styleRegex.exec(content)) !== null) {
+    const index = match.index;
+    if (index > lastIndex) {
+      nodes.push(content.substring(lastIndex, index));
+      keyCounter++;
+    }
+    const classes = match[1].trim();
+    const innerContent = match[2];
+    nodes.push(
+      <span className={classes} key={`style-${keyCounter++}`}>
+        {innerContent}
+      </span>
+    );
+    lastIndex = styleRegex.lastIndex;
+  }
+  if (lastIndex < content.length) {
+    nodes.push(content.substring(lastIndex));
+  }
+  return nodes;
+};
+
+const Home: NextPage<HomeProps> = ({ content }) => {
+  const rawProjectCards = content.projects.content
+    .split(/\n{2,}/)
+    .filter((card) => card.trim().length > 0);
+  const projectCards = rawProjectCards.map((card) => {
+    const lines = card.split("\n").filter((line) => line.trim() !== "");
+    const projectTitle = lines[0] || "";
+    const projectDescription = lines.slice(1).join("\n");
+    return { projectTitle, projectDescription };
+  });
+
+  return (
+    <>
+      <Header />
+      <div className="min-h-screen bg-bg text-primary font-sans pt-20 p-4">
+        <Card
+          id="welcome"
+          title={parseStyledContent(content.header.title || "...")}
+          animate={true}
+          className="mb-[150px] max-w-2xl mx-auto"
+        >
+          {content.header.content.split("\n").map((line, idx) => (
+            <p key={idx} className="mb-2">
+              {parseStyledContent(line)}
+            </p>
+          ))}
+        </Card>
+
+        <Card
+          id="about"
+          title={parseStyledContent(content.about.title || "...")}
+          animate={true}
+          className="mb-[150px] max-w-3xl mx-auto"
+        >
+          {content.about.content.split("\n").map((line, idx) => (
+            <p key={idx} className="mb-2">
+              {parseStyledContent(line)}
+            </p>
+          ))}
+        </Card>
+
+        <Card
+          id="projects"
+          title={parseStyledContent(content.projects.title || "...")}
+          animate={false}
+          className="mb-[150px] max-w-4xl mx-auto"
+          contentClassName="w-full"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {projectCards.map((project, index) => (
+              <Card key={index} animate={true} className="bg-project p-4">
+                <h4 className="text-xl font-bold mb-2">
+                  {parseStyledContent(project.projectTitle)}
+                </h4>
+                <p className="leading-relaxed whitespace-pre-wrap">
+                  {parseStyledContent(project.projectDescription)}
+                </p>
+              </Card>
+            ))}
+          </div>
+        </Card>
+      </div>
+    </>
+  );
+};
+
+export default Home;

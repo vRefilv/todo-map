@@ -1,8 +1,13 @@
-import type { NextConfig } from "next";
+// next.config.js
+import { getSupportedLocales } from "@/utils/getLocales";
 
-const nextConfig: NextConfig = {
-  /* config options here */
+const locales = getSupportedLocales();
+
+module.exports = {
   reactStrictMode: true,
+  i18n: {
+    locales,
+    defaultLocale: "en", // Set your default locale
+  },
+  // Other Next.js configurations...
 };
-
-export default nextConfig;

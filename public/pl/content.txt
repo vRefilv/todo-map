@@ -1,0 +1,71 @@
+<nav>
+Refil
+
+Witaj
+O mnie
+Projekty
+</nav>
+
+<header>
+<title>
+✋ Cześć! Jestem Maciek rowniez znany jako <style text-purple-500>Refil</style>
+</title>
+
+<style text-pink-500>• 3 lata doświadczenia w programowaniu.</style>
+<style text-purple-400>• Aktualnie tworzę aplikacje fullstack w Next.js</style>
+<style text-pink-500>• Obecnie pracuję nad stroną internetową dla Szkolnego Radiowezla</style>
+
+📍 Mieszkam w Polsce 🇵🇱
+
+<style text-purple-600>Zawsze otwarty na naukę i tworzenie! 🚀</style>
+</header>
+
+<about>
+<title>
+🚀 O mnie
+</title>
+Cześć! Jestem <style text-purple-500>Refil</style>, interesuje sie programowaniem z <style text-pink-500>3-letnim doświadczeniem</style>. Moja przygoda z programowaniem rozpoczęła się w <style text-purple-400>2022 roku</style> od Pythona, ale ciekawostka — mam konto na GitHubie od <style text-pink-400>2019 roku</style>, więc mogłem zacząć jeszcze wcześniej!
+
+Jako Prompt Engineer & Developer specjalizuję się w <style text-purple-600>Pythonie, JavaScript</style> i <style text-purple-600>PHP</style>. Obecnie rozwijam swoje umiejętności w <style text-pink-600>Java</style>, <style text-pink-600>TypeScript</style>, <style text-pink-600>React</style>, <style text-pink-600>Next.js</style>, <style text-pink-600>Tailwind.css</style> oraz <style text-pink-600>C#</style>, zawsze starając się być o krok do przodu.
+
+💻 Nad czym pracuję
+
+Obecnie skupiam się na budowaniu aplikacji fullstack w Next.js oraz rozwijaniu kilku ekscytujących projektów.
+</about>
+
+<projects>
+<title>
+🔥 Projekty – Moja Mapa Todo
+</title>
+1. 🎙️ <style text-purple-500>Strona internetowa Szkolnego Radiowezla</style>  
+Platforma do zarządzania szkolną stacją radiową, w tym:  
+<style text-pink-500>- Baza danych PostgreSQL do przechowywania harmonogramów, audycji i danych użytkowników</style>  
+<style text-purple-400>- Frontend Next.js dla eleganckiego i dynamicznego interfejsu</style>  
+<style text-pink-400>- Backend Express.js / Next.js do obsługi interakcji użytkownika i przepływu danych</style>
+
+2. ⛏️ <style text-purple-500>Serwer Minecraft Prison</style>  
+W pełni spersonalizowany serwer Minecraft Prison z:  
+<style text-pink-500>- Niestandardowe wtyczki Paper do unikalnych mechanik gry</style>  
+<style text-purple-400>- Strona serwera oparta na Next.js do statystyk graczy, tablic liderów i innych</style>
+
+3. 📱 <style text-purple-500>Aplikacja mobilna dla mojego taty</style>  
+Spersonalizowana aplikacja mobilna zaprojektowana do pomocy w czytaniu i przechowywaniu informacji:  
+<style text-pink-500>- Python OpenCV do rozpoznawania i przetwarzania tekstu</style>  
+<style text-purple-400>- Lekka baza danych do szybkiego i oszczędnego przechowywania danych</style>  
+<style text-pink-400>- React Native / Kivy-Python dla płynnego i przyjaznego użytkownikowi interfejsu mobilnego</style>
+
+4. 🛒 <style text-purple-500>Sklep z Dropshippingiem</style>  
+W pełni funkcjonalny sklep internetowy z dropshippingiem, w tym:  
+<style text-pink-500>- Integracja płatności dla bezpiecznych transakcji</style>  
+<style text-purple-400>- Niestandardowy backend do zarządzania produktami, zamówieniami i automatyzacją</style>  
+<style text-pink-400>- Optymalizowany frontend dla płynnego doświadczenia zakupowego</style>
+
+5. 📄 <style text-purple-500>Generator CV</style>  
+Aplikacja webowa oparta na Next.js, pomagająca użytkownikom szybko i łatwo tworzyć profesjonalne CV.
+
+6. 📝 <style text-purple-500>Bios i Portfolio</style>  
+Zestaw dobrze zorganizowanych bios do różnych zastosowań:  
+<style text-pink-500>- Bio Terminal – dla entuzjastów CLI</style>  
+<style text-purple-400>- Bio Regularne – do ogólnych wprowadzeń</style>  
+<style text-pink-400>- Bio Portfolio – do profesjonalnego prezentowania moich prac.</style>
+</projects>
