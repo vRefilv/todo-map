@@ -9,6 +9,7 @@ import {
   parseContent,
   ParsedContent,
   SectionContent,
+  parseAttributes,
 } from "@/utils/parseContent";
 
 // Mapping from wide attribute value to Tailwind max-width class
@@ -20,6 +21,101 @@ const widthMapping: { [key: string]: string } = {
   "5": "max-w-5xl",
   "6": "max-w-6xl",
   "7": "max-w-7xl",
+};
+
+// New function to parse custom tags (<embed>, <image>, <link>)
+const parseCustomTags = (content: string): React.ReactNode[] => {
+  const nodes: React.ReactNode[] = [];
+  let lastIndex = 0;
+  const customTagRegex = /<(embed|image|link)(\s+[^>]+)?\s*\/>/g;
+  let match;
+  while ((match = customTagRegex.exec(content)) !== null) {
+    if (match.index > lastIndex) {
+      nodes.push(content.substring(lastIndex, match.index));
+    }
+    const tagName = match[1];
+    const attrString = match[2] || "";
+    const attrs = parseAttributes(attrString);
+    if (tagName === "embed") {
+      const url = attrs.url;
+      if (typeof url === "string") {
+        let embedUrl = url;
+        // Convert short YouTube URLs to embed URLs
+        if (url.includes("youtu.be")) {
+          const parts = url.split("/");
+          const videoId = parts.pop() || "";
+          embedUrl = `https://www.youtube.com/embed/${videoId}`;
+        }
+        nodes.push(
+          <iframe
+            key={`embed-${match.index}`}
+            src={embedUrl}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="w-full h-64 my-4"
+          />
+        );
+      }
+    } else if (tagName === "image") {
+      const url = attrs.url;
+      if (typeof url === "string") {
+        nodes.push(
+          <img key={`image-${match.index}`} src={url} alt="" className="my-4" />
+        );
+      }
+    } else if (tagName === "link") {
+      const url = attrs.url;
+      const name = attrs.name || url;
+      if (typeof url === "string") {
+        nodes.push(
+          <a
+            key={`link-${match.index}`}
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 underline"
+          >
+            {name}
+          </a>
+        );
+      }
+    }
+    lastIndex = customTagRegex.lastIndex;
+  }
+  if (lastIndex < content.length) {
+    nodes.push(content.substring(lastIndex));
+  }
+  return nodes;
+};
+
+// Modified parseStyledContent to support both <style> tags and custom tags
+const parseStyledContent = (content: string): React.ReactNode[] => {
+  const nodes: React.ReactNode[] = [];
+  let keyCounter = 0;
+  const styleRegex = /<style\s+([^>]+)>([\s\S]*?)<\/style>/g;
+  let lastIndex = 0;
+  let match;
+  while ((match = styleRegex.exec(content)) !== null) {
+    const index = match.index;
+    if (index > lastIndex) {
+      const plainText = content.substring(lastIndex, index);
+      nodes.push(...parseCustomTags(plainText));
+      keyCounter++;
+    }
+    const classes = match[1].trim();
+    const innerContent = match[2];
+    nodes.push(
+      <span className={classes} key={`style-${keyCounter++}`}>
+        {parseCustomTags(innerContent)}
+      </span>
+    );
+    lastIndex = styleRegex.lastIndex;
+  }
+  if (lastIndex < content.length) {
+    nodes.push(...parseCustomTags(content.substring(lastIndex)));
+  }
+  return nodes;
 };
 
 interface HomeProps {
@@ -57,34 +153,6 @@ export const getStaticProps: GetStaticProps<HomeProps> = async ({ locale }) => {
   return {
     props: { content: parsedContent },
   };
-};
-
-const parseStyledContent = (content: string): React.ReactNode[] => {
-  const nodes: React.ReactNode[] = [];
-  let keyCounter = 0;
-  const styleRegex = /<style\s+([^>]+)>([\s\S]*?)<\/style>/g;
-  let lastIndex = 0;
-  let match;
-
-  while ((match = styleRegex.exec(content)) !== null) {
-    const index = match.index;
-    if (index > lastIndex) {
-      nodes.push(content.substring(lastIndex, index));
-      keyCounter++;
-    }
-    const classes = match[1].trim();
-    const innerContent = match[2];
-    nodes.push(
-      <span className={classes} key={`style-${keyCounter++}`}>
-        {innerContent}
-      </span>
-    );
-    lastIndex = styleRegex.lastIndex;
-  }
-  if (lastIndex < content.length) {
-    nodes.push(content.substring(lastIndex));
-  }
-  return nodes;
 };
 
 const Home: NextPage<HomeProps> = ({ content }) => {
@@ -155,7 +223,7 @@ const Home: NextPage<HomeProps> = ({ content }) => {
           }
         })}
       </div>
-      <Footer content={footerContent} />
+      <Footer content={parseStyledContent(footerContent)} />
     </>
   );
 };

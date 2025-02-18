@@ -47,6 +47,7 @@ A platform for managing a school radio station, featuring:
 A fully customized Minecraft Prison server with:  
 <style text-pink-500>- Custom Paper plugins for unique game mechanics</style>  
 <style text-purple-400>- Next.js-powered server website for player stats, leaderboards, and more</style>
+<embed url="https://youtu.be/9xUDiJiqNPA" />
 
 3. 📱 <style text-purple-500>Mobile App for My Dad</style>  
 A personalized mobile application designed to assist with reading and storing information:  
@@ -72,4 +73,5 @@ A set of well-structured bios to fit different use cases:
 
 <footer>
 %year% Refil - Always coding with passion.
+Source-code available at <link url="https://github.com/vRefilv/todo-map" name="src" />
 </footer>

@@ -13,7 +13,8 @@ export interface ParsedContent {
 }
 
 // Modified attribute parser to support boolean attributes (like "projects")
-function parseAttributes(attrString: string): {
+// Now exported so it can be reused in custom tag parsing.
+export function parseAttributes(attrString: string): {
   [key: string]: string | boolean;
 } {
   const attrs: { [key: string]: string | boolean } = {};
