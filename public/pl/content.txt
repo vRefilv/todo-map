@@ -8,23 +8,23 @@ Projekty#projekty
 
 <section id="witaj" wide="2">
 <title>
-✋ Cześć! Jestem <style text-purple-500>Refil</style>
+✋ Cześć! Jestem Maciek, również znany jako <style text-purple-500>Refil</style>
 </title>
 
 <style text-pink-500>• 3 lata doświadczenia w programowaniu.</style>
 <style text-purple-400>• Obecnie rozwijam pełnostackowe strony Next.js</style>
-<style text-pink-500>• Obecnie pracuję nad stroną internetową szkolnej stacji radiowej</style>
+<style text-pink-500>• Obecnie pracuję nad stroną internetową szkolnego radiowęzła</style>
 
 📍 Mieszkam w Polsce 🇵🇱
 
-<style text-purple-600>Zawsze otwarty na naukę i budowanie! 🚀</style>
+<style text-purple-600>Zawsze otwarty na naukę i rozwój! 🚀</style>
 </section>
 
 <section id="omnie" wide="3">
 <title>
 🚀 O mnie
 </title>
-Cześć! Jestem <style text-purple-500>Refil</style>, pełnym pasji programistą z <style text-pink-500>3 latami doświadczenia w programowaniu</style>. Moja przygoda z kodowaniem rozpoczęła się w <style text-purple-400>2022</style> z Pythonem, ale ciekawostka — konto na GitHub mam od <style text-pink-400>2019</style>, co oznacza, że mogłem zacząć jeszcze wcześniej!
+Cześć! Jestem <style text-purple-500>Refil</style>, pełnym pasji programistą z <style text-pink-500>3 latami doświadczenia w programowaniu</style>. Moja przygoda z programowaniem rozpoczęła się w <style text-purple-400>2022</style> z Pythonem, ale ciekawostka — konto na GitHub mam od <style text-pink-400>2019</style>, co oznacza, że mogłem zacząć jeszcze wcześniej!
 
 Jako inżynier promptów i programista, specjalizuję się w <style text-purple-600>Pythonie, JavaScript i PHP</style>. Obecnie rozwijam swoje umiejętności w <style text-pink-600>Java, TypeScript, React, Next.js, Tailwind.css i C#</style>, zawsze będąc na bieżąco.
 
@@ -35,28 +35,28 @@ Obecnie skupiam się na budowie pełnostackowych aplikacji Next.js oraz rozwijan
 
 <section projects id="projekty" wide="4">
 <title>
-🔥 Projekty – Moja Mapa Zadań
+🔥 Projekty – Moja Mapa Zadań na 2025
 </title>
-1. 🎙️ <style text-purple-500>Strona szkolnej stacji radiowej</style>  
-Platforma do zarządzania szkolną stacją radiową, zawierająca:  
-<style text-pink-500>- Baza danych PostgreSQL do przechowywania harmonogramów, programów i danych użytkowników</style>  
+1. 🎙️ <style text-purple-500>Strona szkolnego radiowęzła</style>  
+Platforma do zarządzania szkolnym radiowęzłem, zawierająca:  
+<style text-pink-500>- Bazę danych PostgreSQL do przechowywania harmonogramów, programów i danych użytkowników</style>  
 <style text-purple-400>- Frontend Next.js zapewniający elegancki i dynamiczny interfejs użytkownika</style>  
 <style text-pink-400>- Backend Express.js / Next.js do obsługi interakcji użytkowników i przepływu danych</style>
 
 2. ⛏️ <style text-purple-500>Serwer Minecraft Prison</style>  
 W pełni spersonalizowany serwer Minecraft Prison, wyposażony w:  
-<style text-pink-500>- Własne wtyczki Paper dla unikalnych mechanik gry</style>  
-<style text-purple-400>- Strona serwera oparta na Next.js do statystyk graczy, rankingów i więcej</style>
+<style text-pink-500>- Własne pluginy Paper dla unikalnych mechanik gry</style>  
+<style text-purple-400>- Stronę serwera opartą na Next.js do statystyk graczy, rankingów i więcej</style>
 
 3. 📱 <style text-purple-500>Aplikacja mobilna dla mojego taty</style>  
 Spersonalizowana aplikacja mobilna zaprojektowana, aby ułatwić czytanie i przechowywanie informacji:  
 <style text-pink-500>- Python OpenCV do rozpoznawania i przetwarzania tekstu</style>  
-<style text-purple-400>- Lekka baza danych do szybkiego i ekonomicznego przechowywania danych</style>  
+<style text-purple-400>- Lekką bazę danych do szybkiego i ekonomicznego przechowywania danych</style>  
 <style text-pink-400>- React Native / Kivy-Python dla płynnego i przyjaznego interfejsu mobilnego</style>
 
-4. 🛒 <style text-purple-500>Sklep drop shippingowy na zamówienie</style>  
-W pełni funkcjonalny sklep internetowy dla drop shippingu, zawierający:  
-<style text-pink-500>- Integracja płatności dla bezpiecznych transakcji</style>  
+4. 🛒 <style text-purple-500>Sklep dropshippingowy</style>  
+W pełni funkcjonalny sklep internetowy dla dropshippingu, zawierający:  
+<style text-pink-500>- Integracje płatności dla bezpiecznych transakcji</style>  
 <style text-purple-400>- Własny backend do zarządzania produktami, zamówieniami i automatyzacją</style>  
 <style text-pink-400>- Optymalizowany frontend dla płynnych zakupów</style>
 
@@ -71,5 +71,6 @@ Zestaw dobrze skonstruowanych biografii, dopasowanych do różnych zastosowań:
 </section>
 
 <footer>
-%year% Refil - Zawsze koduję z pasją.
+%year% - Refil.
+<link url="https://github.com/vRefilv/todo-map" name="Kod źródłowy" />
 </footer>

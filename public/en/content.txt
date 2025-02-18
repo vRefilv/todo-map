@@ -8,70 +8,69 @@ Projects#projects
 
 <section id="welcome" wide="2">
 <title>
-✋ Hi! I'm <style text-purple-500>Refil</style>
+✋ Hi! I'm Maciek, also known as <style text-purple-500>Refil</style>
 </title>
 
 <style text-pink-500>• 3 years of programming experience.</style>
-<style text-purple-400>• Currently developing next.js fullstack websites</style>
-<style text-pink-500>• Right now I’m working on School Radio Station Website</style>
+<style text-purple-400>• Currently developing full-stack websites with Next.js</style>
+<style text-pink-500>• Currently working on a website for the school radio station</style>
 
-📍 Living in Poland 🇵🇱
+📍 I live in Poland 🇵🇱
 
-<style text-purple-600>Always open to learning and building! 🚀</style>
+<style text-purple-600>Always open to learning and growth! 🚀</style>
 </section>
 
 <section id="aboutme" wide="3">
 <title>
 🚀 About Me
 </title>
-Hey! I'm <style text-purple-500>Refil</style>, a passionate developer with <style text-pink-500>3 years of programming experience</style>. My coding journey started in <style text-purple-400>2022</style> with Python, but fun fact — I’ve had a GitHub account since <style text-pink-400>2019</style>, meaning I could’ve started even earlier!
+Hi! I'm <style text-purple-500>Refil</style>, a passionate programmer with <style text-pink-500>3 years of programming experience</style>. My programming journey began in <style text-purple-400>2022</style> with Python, but fun fact — I have had a GitHub account since <style text-pink-400>2019</style>, which means I might have started even earlier!
 
-As a Prompt Engineer & Developer, I specialize in <style text-purple-600>Python, JavaScript, and PHP</style>. Currently, I’m leveling up with <style text-pink-600>Java, TypeScript, React, Next.js, Tailwind.css, and C#</style>, always staying ahead of the curve.
+As a prompt engineer and programmer, I specialize in <style text-purple-600>Python, JavaScript, and PHP</style>. Currently, I am developing my skills in <style text-pink-600>Java, TypeScript, React, Next.js, Tailwind.css, and C#</style>, always staying up to date.
 
 💻 What I'm Working On
 
-Right now, I'm focused on building full-stack Next.js applications while developing several exciting projects.
+Currently, I am focusing on building full-stack applications with Next.js and developing several exciting projects.
 </section>
 
 <section projects id="projects" wide="4">
 <title>
-🔥 Projects – My Todo Map
+🔥 Projects – My Task Map for 2025
 </title>
 1. 🎙️ <style text-purple-500>School Radio Station Website</style>  
-A platform for managing a school radio station, featuring:  
-<style text-pink-500>- PostgreSQL database for storing schedules, shows, and user data</style>  
-<style text-purple-400>- Next.js frontend for a sleek and dynamic UI</style>  
-<style text-pink-400>- Express.js / Next.js backend for handling user interactions and data flow</style>
+A platform for managing the school radio station, featuring:  
+<style text-pink-500>- A PostgreSQL database for storing schedules, programs, and user data</style>  
+<style text-purple-400>- A Next.js frontend providing an elegant and dynamic user interface</style>  
+<style text-pink-400>- An Express.js / Next.js backend handling user interactions and data flow</style>
 
 2. ⛏️ <style text-purple-500>Minecraft Prison Server</style>  
-A fully customized Minecraft Prison server with:  
+A fully customized Minecraft Prison server, featuring:  
 <style text-pink-500>- Custom Paper plugins for unique game mechanics</style>  
-<style text-purple-400>- Next.js-powered server website for player stats, leaderboards, and more</style>
-<embed url="https://youtu.be/9xUDiJiqNPA" />
+<style text-purple-400>- A Next.js-based server website for player stats, rankings, and more</style>
 
 3. 📱 <style text-purple-500>Mobile App for My Dad</style>  
-A personalized mobile application designed to assist with reading and storing information:  
+A personalized mobile application designed to facilitate reading and storing information:  
 <style text-pink-500>- Python OpenCV for text recognition and processing</style>  
-<style text-purple-400>- Lightweight database for quick and cost-effective data storage</style>  
-<style text-pink-400>- React Native / Kivy-Python for a smooth and user-friendly mobile UI</style>
+<style text-purple-400>- A lightweight database for quick and efficient data storage</style>  
+<style text-pink-400>- React Native / Kivy-Python for a smooth and user-friendly mobile interface</style>
 
-4. 🛒 <style text-purple-500>Custom Drop Shipping Shop</style>  
-A fully functional online store for drop shipping, featuring:  
-<style text-pink-500>- Payment integration for secure transactions</style>  
-<style text-purple-400>- Custom backend to manage products, orders, and automation</style>  
-<style text-pink-400>- Optimized frontend for a seamless shopping experience</style>
+4. 🛒 <style text-purple-500>Drop Shipping Store</style>  
+A fully functional e-commerce store for drop shipping, featuring:  
+<style text-pink-500>- Payment integrations for secure transactions</style>  
+<style text-purple-400>- A custom backend for managing products, orders, and automation</style>  
+<style text-pink-400>- An optimized frontend for seamless shopping</style>
 
 5. 📄 <style text-purple-500>CV Generator</style>  
-A Next.js-based web app to help users create professional resumes quickly and easily.
+A web application based on Next.js that helps users quickly and easily create professional CVs.
 
-6. 📝 <style text-purple-500>Bios & Portfolio</style>  
-A set of well-structured bios to fit different use cases:  
-<style text-pink-500>- Terminal Bio – for CLI enthusiasts</style>  
-<style text-purple-400>- Regular Bio – for general introductions</style>  
-<style text-pink-400>- Portfolio Bio – for showcasing my work professionally.</style>
+6. 📝 <style text-purple-500>Biographies and Portfolios</style>  
+A set of well-structured biographies tailored for different uses:  
+<style text-pink-500>- Terminal biography – for CLI enthusiasts</style>  
+<style text-purple-400>- Standard biography – for general introductions</style>  
+<style text-pink-400>- Portfolio biography – for professionally showcasing my work.</style>
 </section>
 
 <footer>
-%year% Refil - Always coding with passion.
-Source-code available at <link url="https://github.com/vRefilv/todo-map" name="src" />
+%year% - Refil.
+<link url="https://github.com/vRefilv/todo-map" name="Source Code" />
 </footer>

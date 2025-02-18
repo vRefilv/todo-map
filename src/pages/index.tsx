@@ -74,7 +74,7 @@ const parseCustomTags = (content: string): React.ReactNode[] => {
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-500 underline"
+            className="text-purple-500 underline hover:text-purple-700"
           >
             {name}
           </a>

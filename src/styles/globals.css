@@ -10,6 +10,14 @@ a:active {
   animation: click-animation 0.2s ease-in-out;
 }
 
+a {
+  color: pink;
+}
+
+a:hover {
+  color: #9d00ef;
+}
+
 @keyframes click-animation {
   0% {
     transform: scale(1);
