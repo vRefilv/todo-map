@@ -1,8 +1,18 @@
 // src/components/Footer.tsx
-const Footer = () => {
+import React from "react";
+
+interface FooterProps {
+  content: string;
+}
+
+const Footer: React.FC<FooterProps> = ({ content }) => {
+  const year = new Date().getFullYear();
+  // Replace the %year% placeholder with the current year
+  const renderedContent = content.replace("%year%", year.toString());
+
   return (
     <footer className="bg-footer text-footerText p-4 text-center">
-      <p>&copy; {new Date().getFullYear()} Refil. All rights reserved.</p>
+      <p>{renderedContent}</p>
     </footer>
   );
 };

@@ -1,12 +1,12 @@
 <nav>
 Refil
 
-Welcome
-About Me
-Projects
+Welcome#welcome
+About Me#aboutme
+Projects#projects
 </nav>
 
-<header>
+<section id="welcome" wide="2">
 <title>
 ✋ Hi! I'm <style text-purple-500>Refil</style>
 </title>
@@ -18,9 +18,9 @@ Projects
 📍 Living in Poland 🇵🇱
 
 <style text-purple-600>Always open to learning and building! 🚀</style>
-</header>
+</section>
 
-<about>
+<section id="aboutme" wide="3">
 <title>
 🚀 About Me
 </title>
@@ -31,9 +31,9 @@ As a Prompt Engineer & Developer, I specialize in <style text-purple-600>Python,
 💻 What I'm Working On
 
 Right now, I'm focused on building full-stack Next.js applications while developing several exciting projects.
-</about>
+</section>
 
-<projects>
+<section projects id="projects" wide="4">
 <title>
 🔥 Projects – My Todo Map
 </title>
@@ -68,4 +68,8 @@ A set of well-structured bios to fit different use cases:
 <style text-pink-500>- Terminal Bio – for CLI enthusiasts</style>  
 <style text-purple-400>- Regular Bio – for general introductions</style>  
 <style text-pink-400>- Portfolio Bio – for showcasing my work professionally.</style>
-</projects>
+</section>
+
+<footer>
+%year% Refil - Always coding with passion.
+</footer>

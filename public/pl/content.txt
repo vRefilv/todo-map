@@ -1,71 +1,75 @@
 <nav>
 Refil
 
-Witaj
-O mnie
-Projekty
+Witaj#witaj
+O mnie#omnie
+Projekty#projekty
 </nav>
 
-<header>
+<section id="witaj" wide="2">
 <title>
-✋ Cześć! Jestem Maciek rowniez znany jako <style text-purple-500>Refil</style>
+✋ Cześć! Jestem <style text-purple-500>Refil</style>
 </title>
 
 <style text-pink-500>• 3 lata doświadczenia w programowaniu.</style>
-<style text-purple-400>• Aktualnie tworzę aplikacje fullstack w Next.js</style>
-<style text-pink-500>• Obecnie pracuję nad stroną internetową dla Szkolnego Radiowezla</style>
+<style text-purple-400>• Obecnie rozwijam pełnostackowe strony Next.js</style>
+<style text-pink-500>• Obecnie pracuję nad stroną internetową szkolnej stacji radiowej</style>
 
 📍 Mieszkam w Polsce 🇵🇱
 
-<style text-purple-600>Zawsze otwarty na naukę i tworzenie! 🚀</style>
-</header>
+<style text-purple-600>Zawsze otwarty na naukę i budowanie! 🚀</style>
+</section>
 
-<about>
+<section id="omnie" wide="3">
 <title>
 🚀 O mnie
 </title>
-Cześć! Jestem <style text-purple-500>Refil</style>, interesuje sie programowaniem z <style text-pink-500>3-letnim doświadczeniem</style>. Moja przygoda z programowaniem rozpoczęła się w <style text-purple-400>2022 roku</style> od Pythona, ale ciekawostka — mam konto na GitHubie od <style text-pink-400>2019 roku</style>, więc mogłem zacząć jeszcze wcześniej!
+Cześć! Jestem <style text-purple-500>Refil</style>, pełnym pasji programistą z <style text-pink-500>3 latami doświadczenia w programowaniu</style>. Moja przygoda z kodowaniem rozpoczęła się w <style text-purple-400>2022</style> z Pythonem, ale ciekawostka — konto na GitHub mam od <style text-pink-400>2019</style>, co oznacza, że mogłem zacząć jeszcze wcześniej!
 
-Jako Prompt Engineer & Developer specjalizuję się w <style text-purple-600>Pythonie, JavaScript</style> i <style text-purple-600>PHP</style>. Obecnie rozwijam swoje umiejętności w <style text-pink-600>Java</style>, <style text-pink-600>TypeScript</style>, <style text-pink-600>React</style>, <style text-pink-600>Next.js</style>, <style text-pink-600>Tailwind.css</style> oraz <style text-pink-600>C#</style>, zawsze starając się być o krok do przodu.
+Jako inżynier promptów i programista, specjalizuję się w <style text-purple-600>Pythonie, JavaScript i PHP</style>. Obecnie rozwijam swoje umiejętności w <style text-pink-600>Java, TypeScript, React, Next.js, Tailwind.css i C#</style>, zawsze będąc na bieżąco.
 
 💻 Nad czym pracuję
 
-Obecnie skupiam się na budowaniu aplikacji fullstack w Next.js oraz rozwijaniu kilku ekscytujących projektów.
-</about>
+Obecnie skupiam się na budowie pełnostackowych aplikacji Next.js oraz rozwijaniu kilku ekscytujących projektów.
+</section>
 
-<projects>
+<section projects id="projekty" wide="4">
 <title>
-🔥 Projekty – Moja Mapa Todo
+🔥 Projekty – Moja Mapa Zadań
 </title>
-1. 🎙️ <style text-purple-500>Strona internetowa Szkolnego Radiowezla</style>  
-Platforma do zarządzania szkolną stacją radiową, w tym:  
-<style text-pink-500>- Baza danych PostgreSQL do przechowywania harmonogramów, audycji i danych użytkowników</style>  
-<style text-purple-400>- Frontend Next.js dla eleganckiego i dynamicznego interfejsu</style>  
-<style text-pink-400>- Backend Express.js / Next.js do obsługi interakcji użytkownika i przepływu danych</style>
+1. 🎙️ <style text-purple-500>Strona szkolnej stacji radiowej</style>  
+Platforma do zarządzania szkolną stacją radiową, zawierająca:  
+<style text-pink-500>- Baza danych PostgreSQL do przechowywania harmonogramów, programów i danych użytkowników</style>  
+<style text-purple-400>- Frontend Next.js zapewniający elegancki i dynamiczny interfejs użytkownika</style>  
+<style text-pink-400>- Backend Express.js / Next.js do obsługi interakcji użytkowników i przepływu danych</style>
 
 2. ⛏️ <style text-purple-500>Serwer Minecraft Prison</style>  
-W pełni spersonalizowany serwer Minecraft Prison z:  
-<style text-pink-500>- Niestandardowe wtyczki Paper do unikalnych mechanik gry</style>  
-<style text-purple-400>- Strona serwera oparta na Next.js do statystyk graczy, tablic liderów i innych</style>
+W pełni spersonalizowany serwer Minecraft Prison, wyposażony w:  
+<style text-pink-500>- Własne wtyczki Paper dla unikalnych mechanik gry</style>  
+<style text-purple-400>- Strona serwera oparta na Next.js do statystyk graczy, rankingów i więcej</style>
 
 3. 📱 <style text-purple-500>Aplikacja mobilna dla mojego taty</style>  
-Spersonalizowana aplikacja mobilna zaprojektowana do pomocy w czytaniu i przechowywaniu informacji:  
+Spersonalizowana aplikacja mobilna zaprojektowana, aby ułatwić czytanie i przechowywanie informacji:  
 <style text-pink-500>- Python OpenCV do rozpoznawania i przetwarzania tekstu</style>  
-<style text-purple-400>- Lekka baza danych do szybkiego i oszczędnego przechowywania danych</style>  
-<style text-pink-400>- React Native / Kivy-Python dla płynnego i przyjaznego użytkownikowi interfejsu mobilnego</style>
+<style text-purple-400>- Lekka baza danych do szybkiego i ekonomicznego przechowywania danych</style>  
+<style text-pink-400>- React Native / Kivy-Python dla płynnego i przyjaznego interfejsu mobilnego</style>
 
-4. 🛒 <style text-purple-500>Sklep z Dropshippingiem</style>  
-W pełni funkcjonalny sklep internetowy z dropshippingiem, w tym:  
+4. 🛒 <style text-purple-500>Sklep drop shippingowy na zamówienie</style>  
+W pełni funkcjonalny sklep internetowy dla drop shippingu, zawierający:  
 <style text-pink-500>- Integracja płatności dla bezpiecznych transakcji</style>  
-<style text-purple-400>- Niestandardowy backend do zarządzania produktami, zamówieniami i automatyzacją</style>  
-<style text-pink-400>- Optymalizowany frontend dla płynnego doświadczenia zakupowego</style>
+<style text-purple-400>- Własny backend do zarządzania produktami, zamówieniami i automatyzacją</style>  
+<style text-pink-400>- Optymalizowany frontend dla płynnych zakupów</style>
 
 5. 📄 <style text-purple-500>Generator CV</style>  
-Aplikacja webowa oparta na Next.js, pomagająca użytkownikom szybko i łatwo tworzyć profesjonalne CV.
+Aplikacja internetowa oparta na Next.js, pomagająca użytkownikom szybko i łatwo tworzyć profesjonalne CV.
 
-6. 📝 <style text-purple-500>Bios i Portfolio</style>  
-Zestaw dobrze zorganizowanych bios do różnych zastosowań:  
-<style text-pink-500>- Bio Terminal – dla entuzjastów CLI</style>  
-<style text-purple-400>- Bio Regularne – do ogólnych wprowadzeń</style>  
-<style text-pink-400>- Bio Portfolio – do profesjonalnego prezentowania moich prac.</style>
-</projects>
+6. 📝 <style text-purple-500>Biografie i portfolio</style>  
+Zestaw dobrze skonstruowanych biografii, dopasowanych do różnych zastosowań:  
+<style text-pink-500>- Biografia terminalowa – dla entuzjastów CLI</style>  
+<style text-purple-400>- Biografia standardowa – do ogólnych przedstawień</style>  
+<style text-pink-400>- Biografia portfolio – do profesjonalnego prezentowania mojej pracy.</style>
+</section>
+
+<footer>
+%year% Refil - Zawsze koduję z pasją.
+</footer>
