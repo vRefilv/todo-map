@@ -5,6 +5,7 @@ import React from "react";
 import Card from "../components/Card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FadeJumpIn from "@/components/FadeJumpIn";
 import {
   parseContent,
   ParsedContent,
@@ -23,7 +24,6 @@ const widthMapping: { [key: string]: string } = {
   "7": "max-w-7xl",
 };
 
-// New function to parse custom tags (<embed>, <image>, <link>)
 const parseCustomTags = (content: string): React.ReactNode[] => {
   const nodes: React.ReactNode[] = [];
   let lastIndex = 0;
@@ -40,7 +40,6 @@ const parseCustomTags = (content: string): React.ReactNode[] => {
       const url = attrs.url;
       if (typeof url === "string") {
         let embedUrl = url;
-        // Convert short YouTube URLs to embed URLs
         if (url.includes("youtu.be")) {
           const parts = url.split("/");
           const videoId = parts.pop() || "";
@@ -89,7 +88,6 @@ const parseCustomTags = (content: string): React.ReactNode[] => {
   return nodes;
 };
 
-// Modified parseStyledContent to support both <style> tags and custom tags
 const parseStyledContent = (content: string): React.ReactNode[] => {
   const nodes: React.ReactNode[] = [];
   let keyCounter = 0;
@@ -164,12 +162,12 @@ const Home: NextPage<HomeProps> = ({ content }) => {
   return (
     <>
       <Header navContent={navContent} />
-      <div className="min-h-screen bg-bg text-primary font-sans pt-20 p-4">
-        {sections.map((section: SectionContent) => {
+      {/* Using scroll snapping so that on desktop only one section is visible at a time */}
+      <div className="min-h-screen bg-bg text-primary font-sans pt-20 p-4 snap-y snap-mandatory">
+        {sections.map((section: SectionContent, index: number) => {
           const widthClass =
             (section.width && widthMapping[section.width]) || "max-w-3xl";
           if (section.type === "projects") {
-            // Special rendering for projects sections
             const rawProjectCards = section.content
               .split(/\n{2,}/)
               .filter((card) => card.trim().length > 0);
@@ -182,43 +180,55 @@ const Home: NextPage<HomeProps> = ({ content }) => {
               return { projectTitle, projectDescription };
             });
             return (
-              <Card
+              <FadeJumpIn
                 key={section.id}
-                id={section.id}
-                title={parseStyledContent(section.title || section.id)}
-                animate={false}
-                className={`mb-[150px] ${widthClass} mx-auto`}
-                contentClassName="w-full"
+                delay={index * 100}
+                className="snap-start"
               >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 m-2">
-                  {projectCards.map((project, index) => (
-                    <Card key={index} animate={true} className="bg-project p-4">
-                      <h4 className="text-xl font-bold mb-2">
-                        {parseStyledContent(project.projectTitle)}
-                      </h4>
-                      <p className="leading-relaxed whitespace-pre-wrap">
-                        {parseStyledContent(project.projectDescription)}
-                      </p>
-                    </Card>
-                  ))}
-                </div>
-              </Card>
+                <Card
+                  id={section.id}
+                  title={parseStyledContent(section.title || section.id)}
+                  animate={false}
+                  className={`mb-[150px] ${widthClass} mx-auto`}
+                  contentClassName="w-full"
+                >
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-10 m-2">
+                    {projectCards.map((project, i) => (
+                      <FadeJumpIn key={i} delay={i * 100} className="contents">
+                        <Card animate={true} className="bg-project p-4">
+                          <h4 className="text-xl font-bold mb-2">
+                            {parseStyledContent(project.projectTitle)}
+                          </h4>
+                          <p className="leading-relaxed whitespace-pre-wrap">
+                            {parseStyledContent(project.projectDescription)}
+                          </p>
+                        </Card>
+                      </FadeJumpIn>
+                    ))}
+                  </div>
+                </Card>
+              </FadeJumpIn>
             );
           } else {
             return (
-              <Card
+              <FadeJumpIn
                 key={section.id}
-                id={section.id}
-                title={parseStyledContent(section.title || section.id)}
-                animate={true}
-                className={`mb-[150px] ${widthClass} mx-auto`}
+                delay={index * 100}
+                className="snap-start"
               >
-                {section.content.split("\n").map((line, idx) => (
-                  <p key={idx} className="mb-2">
-                    {parseStyledContent(line)}
-                  </p>
-                ))}
-              </Card>
+                <Card
+                  id={section.id}
+                  title={parseStyledContent(section.title || section.id)}
+                  animate={true}
+                  className={`mb-[150px] ${widthClass} mx-auto`}
+                >
+                  {section.content.split("\n").map((line, idx) => (
+                    <p key={idx} className="mb-2">
+                      {parseStyledContent(line)}
+                    </p>
+                  ))}
+                </Card>
+              </FadeJumpIn>
             );
           }
         })}

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "chart.js": "^4.4.7",
+    "framer-motion": "^12.4.4",
     "html-react-parser": "^5.2.2",
     "next": "15.1.7",
     "react": "^19.0.0",
