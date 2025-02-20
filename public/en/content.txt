@@ -69,8 +69,7 @@ A set of well-structured biographies tailored for different uses:
 <style text-purple-400>- Standard biography – for general introductions</style>  
 <style text-pink-400>- Portfolio biography – for professionally showcasing my work.</style>
 
-7. 📝 <style text-purple-500>What-am-i-listening-to</style>  
-A set of well-structured biographies tailored for different uses:  
+7. 📝 <style text-purple-500>What-am-i-listening-to</style>   
 Web app to connect spotify and share what you're listening too like on discord.
 Next.js
 </section>
