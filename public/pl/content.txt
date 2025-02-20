@@ -68,6 +68,10 @@ Zestaw dobrze skonstruowanych biografii, dopasowanych do różnych zastosowań:
 <style text-pink-500>- Biografia terminalowa – dla entuzjastów CLI</style>  
 <style text-purple-400>- Biografia standardowa – do ogólnych przedstawień</style>  
 <style text-pink-400>- Biografia portfolio – do profesjonalnego prezentowania mojej pracy.</style>
+
+7. 📝 <style text-purple-500>What-am-i-listening-to</style>  
+Aplikacja webowa do laczenia spotify i udostepniania linku do czego obecnie sluchasz jak na discordzie.
+Next.js
 </section>
 
 <footer>
